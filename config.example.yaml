@@ -1,0 +1,31 @@
+# consult - hledger billing system configuration
+# Copy this to config.yaml and run 'consult init' to set up interactively.
+
+entities:
+  my-company:
+    name: "Your Company Name"
+    business_number: "123-456-789-RT0001"
+    email: "you@example.com"
+    phone: "555-1234"
+    payment_terms: "Net 30 days"
+    currency: CAD
+    tax: 13
+    invoice_prefix: ""
+    next_invoice: 2026-001
+    journal_file: "~/.hledger.journal"
+    # Template (optional): filename within templates/ directory.
+    # If not set, uses templates/invoice.typ
+    template: null
+    accounts:
+      receivable: "Assets:Accounts Receivable"
+      income: "Income:Consulting"
+      tax_liability: "Liabilities:HST Payable"
+      bank: "Assets:Chequing"
+
+# Project files (in projects/*.yaml) can also specify:
+#   template: "custom-client.typ"
+# Resolution order: project template > entity template > templates/invoice.typ
+
+defaults:
+  entity: my-company
+  last_project: null

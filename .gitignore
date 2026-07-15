@@ -1,0 +1,20 @@
+# User data - private
+config.yaml
+projects/
+timesheets/
+invoices/
+output/
+build/
+
+# Keep directory structure
+!projects/.gitkeep
+!timesheets/.gitkeep
+!timesheets/billed/.gitkeep
+!invoices/.gitkeep
+!output/.gitkeep
+!build/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
