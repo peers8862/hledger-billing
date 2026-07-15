@@ -13,10 +13,27 @@ A command-line billing system for consultants built around [hledger](https://hle
 
 ## Requirements
 
-- Python 3.8+
-- [PyYAML](https://pyyaml.org/) (`pip install pyyaml`)
-- [hledger](https://hledger.org/install.html)
-- [Typst](https://typst.app/) (for PDF generation)
+| Tool | Minimum version | Install |
+|------|----------------|---------|
+| Python | 3.8+ | [python.org](https://www.python.org/downloads/) or system package manager |
+| PyYAML | 5.0+ | `pip install pyyaml` |
+| hledger | 1.29+ | [hledger.org/install](https://hledger.org/install.html) |
+| Typst | 0.11+ | [typst.app](https://github.com/typst/typst/releases) or `cargo install typst-cli` |
+
+Verify your setup:
+
+```bash
+python3 --version        # Python 3.8+
+python3 -c "import yaml" # no error = PyYAML installed
+hledger --version        # hledger 1.29+
+typst --version          # typst 0.11+
+```
+
+### Platform notes
+
+- **Linux**: All tools available via package managers or direct download
+- **macOS**: `brew install python hledger typst` covers most of it; `pip install pyyaml` for the Python library
+- **Windows**: All tools support Windows; use WSL or native installs
 
 ## Install
 
