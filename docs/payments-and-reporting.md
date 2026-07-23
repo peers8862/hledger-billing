@@ -11,8 +11,8 @@ Shows your outstanding invoices and lets you pick one:
 ```
 Outstanding invoices:
 
-  1. 2026-001  Cibby Alexandar / YUPI dot CA   $630.23 CAD   (45 days)
-  2. 2026-002  Cibby Alexandar / YUPI dot CA   $567.14 CAD   (15 days)
+  1. 2026-001  Johnny Smith / Demo-Comp dot CA   $630.23 CAD   (45 days)
+  2. 2026-002  Johnny Smith / Demo-Comp dot CA   $567.14 CAD   (15 days)
   3. MM-2026-001  Other Client / Widget        $750.00 USD   (10 days)
 
 Which invoice? 1
@@ -43,9 +43,9 @@ The invoice stays in "outstanding" with a reduced balance. Run `consult paid` ag
 ### Generated journal entry
 
 ```
-2026-08-10 * Payment received 2026-001  ; invoice:2026-001, client:Cibby Alexandar
+2026-08-10 * Payment received 2026-001  ; invoice:2026-001, client:Johnny Smith
     Assets:Chequing                                    CAD 630.23
-    Assets:Accounts Receivable:Cibby Alexandar         CAD -630.23
+    Assets:Accounts Receivable:Johnny Smith         CAD -630.23
 ```
 
 ---
@@ -62,11 +62,11 @@ Shows all unpaid invoices grouped by age:
 Outstanding: $1947.37
 
   Current (0-30 days):
-    2026-002       Cibby Alexandar           $    567.14 CAD  (15d)
+    2026-002       Johnny Smith           $    567.14 CAD  (15d)
     MM-2026-001    Other Client              $    750.00 USD  (10d)
 
   30+ days:
-    2026-001       Cibby Alexandar           $    630.23 CAD  (45d)
+    2026-001       Johnny Smith           $    630.23 CAD  (45d)
 
   60+ days:
 
@@ -86,7 +86,7 @@ consult status
 Shows what you've logged but haven't invoiced yet, grouped by project and type:
 
 ```
-cibby-yupi — Cibby Alexandar / YUPI dot CA (CAD)
+johnny-demo-comp — Johnny Smith / Demo-Comp dot CA (CAD)
   billable      17.50h  →  $557.73
   research       3.00h   (not billed)
   total         22.75h
@@ -108,14 +108,14 @@ Outputs CSV to stdout. Pipe to a file or other tools:
 
 ```bash
 consult export > timesheet.csv
-consult export --project cibby-yupi > cibby-hours.csv
+consult export --project johnny-demo-comp > johnny-hours.csv
 ```
 
 ### Flags
 
 | Flag | Example | Description |
 |------|---------|-------------|
-| `--project` | `--project cibby-yupi` | Filter by project slug |
+| `--project` | `--project johnny-demo-comp` | Filter by project slug |
 | `--from` | `--from 2026-01-01` | Entries on or after date |
 | `--to` | `--to 2026-06-30` | Entries on or before date |
 | `--tag` | `--tag sprint-4` | Only entries with this tag |
@@ -124,7 +124,7 @@ consult export --project cibby-yupi > cibby-hours.csv
 
 Flags combine (AND logic):
 ```bash
-consult export --project cibby-yupi --from 2026-06-01 --to 2026-06-30 --type billable
+consult export --project johnny-demo-comp --from 2026-06-01 --to 2026-06-30 --type billable
 ```
 
 ### CSV columns
@@ -139,7 +139,7 @@ Tags are semicolon-separated within the column.
 
 Send a timesheet to a client:
 ```bash
-consult export --project cibby-yupi --from 2026-06-01 --type billable > june-timesheet.csv
+consult export --project johnny-demo-comp --from 2026-06-01 --type billable > june-timesheet.csv
 ```
 
 Analyze your own time allocation:
@@ -166,7 +166,7 @@ hledger -f ~/accounting/journal.hledger bal Income:Consulting
 hledger -f ~/accounting/journal.hledger bal "Assets:Accounts Receivable"
 
 # All activity for a specific client
-hledger -f ~/accounting/journal.hledger reg tag:client="Cibby Alexandar"
+hledger -f ~/accounting/journal.hledger reg tag:client="Johnny Smith"
 
 # Invoices by entity
 hledger -f ~/accounting/journal.hledger reg tag:entity=clairlea

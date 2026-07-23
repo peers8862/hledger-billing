@@ -82,8 +82,8 @@ entity:
   phone: "555-1234"                        # or null
   payment_terms: "Net 30 days"
 
-client: "Cibby Alexandar"
-project: "YUPI dot CA"
+client: "Johnny Smith"
+project: "Demo-Comp dot CA"
 currency: "CAD"
 rate_type: "daily"             # or "hourly"
 hours_per_day: 7.5             # or null for hourly

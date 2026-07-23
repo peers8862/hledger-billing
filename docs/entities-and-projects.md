@@ -66,7 +66,7 @@ accounts:
 ```
 
 The client name is appended to the receivable account automatically:
-`Assets:Accounts Receivable:Cibby Alexandar`
+`Assets:Accounts Receivable:Johnny Smith`
 
 ---
 
@@ -133,8 +133,8 @@ Stored in `projects/<slug>.yaml`:
 
 ```yaml
 entity: clairlea
-client: Cibby Alexandar
-project: YUPI dot CA
+client: Johnny Smith
+project: Demo-Comp dot CA
 currency: CAD
 tax: 13
 rate_type: daily

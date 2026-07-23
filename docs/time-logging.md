@@ -64,7 +64,7 @@ consult log --batch
 ```
 
 ```
-Project [cibby-yupi]: ↵
+Project [johnny-demo-comp]: ↵
 Type for all entries [billable]: ↵
 Tax % for all entries [13]: ↵
 
@@ -109,7 +109,7 @@ Rules:
 Non-billable entries are tracked for your own visibility. `consult status` shows a breakdown:
 
 ```
-Project: cibby-yupi (Cibby Alexandar / YUPI dot CA)
+Project: johnny-demo-comp (Johnny Smith / Demo-Comp dot CA)
   billable      17.50h  →  $557.67
   research       3.00h   (not billed)
   prep           2.25h   (not billed)
@@ -159,7 +159,7 @@ Entries are stored in `timesheets/unbilled.yaml`:
 
 ```yaml
 entries:
-  - project: cibby-yupi
+  - project: johnny-demo-comp
     date: 2026-07-15
     hours: 4.0
     focus: Frontend migration

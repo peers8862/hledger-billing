@@ -20,9 +20,9 @@ consult invoice
 ### Example session
 
 ```
-Project [cibby-yupi]: ↵
+Project [johnny-demo-comp]: ↵
 
-Unbilled billable entries for Cibby Alexandar / YUPI dot CA (CAD):
+Unbilled billable entries for Johnny Smith / Demo-Comp dot CA (CAD):
 
   #    Date          Hours     Rate Focus                          Tax
   ---- ----------   ------ -------- ------------------------------ -------
@@ -82,8 +82,8 @@ A professional invoice rendered via Typst from your template. Contains:
 ### 2. hledger journal (`invoices/<year>/<number>.journal`)
 
 ```
-2026-07-15 * Invoice 2026-002  ; invoice:2026-002, client:Cibby Alexandar, project:YUPI dot CA, entity:clairlea
-    Assets:Accounts Receivable:Cibby Alexandar         CAD 567.14
+2026-07-15 * Invoice 2026-002  ; invoice:2026-002, client:Johnny Smith, project:Demo-Comp dot CA, entity:clairlea
+    Assets:Accounts Receivable:Johnny Smith         CAD 567.14
     Income:Consulting                                  CAD -518.39
     Liabilities:HST Payable                            CAD -48.75
 ```
@@ -91,7 +91,7 @@ A professional invoice rendered via Typst from your template. Contains:
 Tags on the transaction make it queryable:
 ```bash
 hledger reg tag:invoice=2026-002
-hledger reg tag:client="Cibby Alexandar"
+hledger reg tag:client="Johnny Smith"
 hledger bal tag:entity=clairlea
 ```
 
@@ -102,8 +102,8 @@ Metadata used by `consult paid` and `consult outstanding`:
 ```yaml
 invoice: 2026-002
 entity: clairlea
-client: Cibby Alexandar
-project_slug: cibby-yupi
+client: Johnny Smith
+project_slug: johnny-demo-comp
 date: 2026-07-15
 currency: CAD
 subtotal: 518.39
